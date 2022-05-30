@@ -14,7 +14,6 @@ public class StudentMapperImpl implements StudentMapper {
         this.sqlSession = sqlSession;
     }
 
-
     @Override
     public List<Student> selectList() {
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
