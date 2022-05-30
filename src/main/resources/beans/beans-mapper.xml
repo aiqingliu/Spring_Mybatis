@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 引入sql会话 -->
+    <import resource="classpath:sql-session-factory.xml"></import>
+
+    <!-- 接口实现 -->
+    <bean id="studentMapper" class="mapper.impl.StudentMapperImpl">
+        <property name="sqlSession" ref="sqlSession"></property>
+    </bean>
+
+</beans>
