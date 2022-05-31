@@ -1,5 +1,5 @@
-import mapper.StudentMapper;
-import model.Student;
+import com.laq.mapper.StudentMapper;
+import com.laq.model.Student;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

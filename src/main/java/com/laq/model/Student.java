@@ -1,4 +1,4 @@
-package model;
+package com.laq.model;
 
 public class Student {
 

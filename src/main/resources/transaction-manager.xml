@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 数据库配置 -->
+    <import resource="classpath:sql-session-factory.xml"></import>
+
+    <!-- 事务管理 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+
+    <!-- 注解扫描的模式 更适用于灵活的小型的项目-->
+<!--    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>-->
+
+    <tx:advice id="transaction_manager_advice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="add" propagation="REQUIRED" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+
+<!--    <aop:config>-->
+<!--        &lt;!&ndash; 切入点 &ndash;&gt;-->
+<!--        <aop:pointcut id="transaction_manager_pt" expression="execution(* service.impl..*.*(..))"/>-->
+<!--        &lt;!&ndash; 通知 &ndash;&gt;-->
+<!--        <aop:advisor advice-ref="transaction_manager_advice" pointcut-ref="transaction_manager_pt"></aop:advisor>-->
+<!--    </aop:config>-->
+
+</beans>

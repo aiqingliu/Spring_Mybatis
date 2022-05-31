@@ -1,7 +1,7 @@
-package mapper.impl;
+package com.laq.mapper.impl;
 
-import mapper.StudentMapper;
-import model.Student;
+import com.laq.mapper.StudentMapper;
+import com.laq.model.Student;
 import org.mybatis.spring.SqlSessionTemplate;
 
 import java.util.List;

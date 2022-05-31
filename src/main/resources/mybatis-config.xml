@@ -6,7 +6,7 @@
 
     <!-- 别名 -->
     <typeAliases>
-        <package name="model"/>
+        <package name="com.laq.model"/>
     </typeAliases>
 
 </configuration>

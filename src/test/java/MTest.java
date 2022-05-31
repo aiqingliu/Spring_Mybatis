@@ -1,5 +1,5 @@
-import mapper.StudentMapper;
-import model.Student;
+import com.laq.mapper.StudentMapper;
+import com.laq.model.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

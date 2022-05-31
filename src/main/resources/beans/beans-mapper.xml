@@ -7,7 +7,7 @@
     <import resource="classpath:sql-session-factory.xml"></import>
 
     <!-- 接口实现 -->
-    <bean id="studentMapper" class="mapper.impl.StudentMapperImpl">
+    <bean id="studentMapper" class="com.laq.mapper.impl.StudentMapperImpl">
         <property name="sqlSession" ref="sqlSession"></property>
     </bean>
 

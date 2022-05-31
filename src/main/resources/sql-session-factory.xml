@@ -18,7 +18,7 @@
         <!-- 配置文件位置 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"></property>
         <!-- mapper.xml文件位置 -->
-        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+        <property name="mapperLocations" value="classpath:com/laq/mapper/*.xml"></property>
     </bean>
 
     <!-- 创建会话 -->

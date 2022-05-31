@@ -1,6 +1,6 @@
-package mapper;
+package com.laq.mapper;
 
-import model.Student;
+import com.laq.model.Student;
 
 import java.util.List;
 
