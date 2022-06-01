@@ -20,4 +20,22 @@ public class StudentMapperImpl implements StudentMapper {
         List<Student> studentList = studentMapper.selectList();
         return studentList;
     }
+
+    @Override
+    public void add(Student student) {
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        studentMapper.add(student);
+    }
+
+    @Override
+    public void delete(Student student) {
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        studentMapper.delete(student);
+    }
+
+    @Override
+    public void update(Student student) {
+        StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+        studentMapper.update(student);
+    }
 }

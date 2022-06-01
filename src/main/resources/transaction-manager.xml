@@ -23,15 +23,23 @@
 
     <tx:advice id="transaction_manager_advice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="add" propagation="REQUIRED" isolation="DEFAULT"/>
+<!--            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT"/>-->
+<!--            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT"/>-->
+<!--            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT"/>-->
+<!--            <tx:method name="select*" propagation="REQUIRED" isolation="DEFAULT"/>-->
+            <tx:method name="*" propagation="REQUIRED" isolation="DEFAULT"/>
         </tx:attributes>
     </tx:advice>
 
-<!--    <aop:config>-->
-<!--        &lt;!&ndash; 切入点 &ndash;&gt;-->
-<!--        <aop:pointcut id="transaction_manager_pt" expression="execution(* service.impl..*.*(..))"/>-->
-<!--        &lt;!&ndash; 通知 &ndash;&gt;-->
-<!--        <aop:advisor advice-ref="transaction_manager_advice" pointcut-ref="transaction_manager_pt"></aop:advisor>-->
-<!--    </aop:config>-->
+    <aop:config>
+        <!-- 切入点 -->
+        <aop:pointcut id="transaction_manager_pt" expression="execution(* com.laq.service.impl..*.*(..))"/>
+        <!-- 切入点 mapper -->
+<!--        <aop:pointcut id="transaction_manager_pt_mapper" expression="execution(* com.laq.mapper.impl..*.*(..))"/>-->
+        <!-- 通知 -->
+        <aop:advisor advice-ref="transaction_manager_advice" pointcut-ref="transaction_manager_pt"></aop:advisor>
+        <!-- 通知 mapper -->
+<!--        <aop:advisor advice-ref="transaction_manager_advice" pointcut-ref="transaction_manager_pt_mapper"></aop:advisor>-->
+    </aop:config>
 
 </beans>

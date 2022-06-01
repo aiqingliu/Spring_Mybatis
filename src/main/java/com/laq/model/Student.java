@@ -12,6 +12,25 @@ public class Student {
 
     private String addr;
 
+    public Student() {
+
+    }
+
+    public Student(String code, String name, Integer age, String addr) {
+        this.code = code;
+        this.name = name;
+        this.age = age;
+        this.addr = addr;
+    }
+
+    public Student(Long id, String code, String name, Integer age, String addr) {
+        this.id = id;
+        this.code = code;
+        this.name = name;
+        this.age = age;
+        this.addr = addr;
+    }
+
     public Long getId() {
         return id;
     }

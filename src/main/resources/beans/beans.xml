@@ -9,4 +9,6 @@
     <!-- 接口类mapper引入 -->
     <import resource="classpath:beans/beans-mapper.xml"></import>
 
+    <!-- service接口 -->
+    <import resource="classpath:beans/beans-service.xml"></import>
 </beans>

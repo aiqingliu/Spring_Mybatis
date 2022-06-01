@@ -9,4 +9,9 @@
     <!-- sql会话 -->
     <import resource="classpath:sql-session-factory.xml"></import>
 
+    <!-- 打印方法名 -->
+    <import resource="classpath:method-loginfo-aop.xml"></import>
+
+    <!-- 事务管理 -->
+    <import resource="classpath:transaction-manager.xml"></import>
 </beans>
